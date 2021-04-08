@@ -15,6 +15,7 @@ namespace Hotel_Reservation_Manager.Models.Data{
         public string Email { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
         public bool Adult { get; set; }
+        public System.Collections.Generic.ICollection<Reservation> Reservations { get; set; }
 
 
     }

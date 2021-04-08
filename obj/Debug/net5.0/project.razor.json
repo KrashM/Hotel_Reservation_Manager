@@ -15628,8 +15628,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\SignIn\\Home.cshtml",
+      "TargetPath": "Views\\SignIn\\Home.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Platform\\Users.cshtml",
+      "TargetPath": "Views\\Platform\\Users.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Platform\\Reservations.cshtml",
+      "TargetPath": "Views\\Platform\\Reservations.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15640,6 +15650,11 @@
     {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Platform\\Clients.cshtml",
+      "TargetPath": "Views\\Platform\\Clients.cshtml",
       "FileKind": "mvc"
     }
   ],

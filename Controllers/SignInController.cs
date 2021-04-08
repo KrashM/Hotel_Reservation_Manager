@@ -7,10 +7,6 @@ namespace Hotel_Reservation_Manager.Controllers{
 
     public class SignInController : Controller{
 
-        public IActionResult SignIn(){
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Verify(string username, string password){
 
@@ -26,12 +22,6 @@ namespace Hotel_Reservation_Manager.Controllers{
             }
 
             return View("Home");
-
-        }
-
-        public ActionResult Users(){
-
-            return View("~/Views/Platform/Users.cshtml");
 
         }
 

@@ -8,17 +8,9 @@ namespace Hotel_Reservation_Manager.Controllers{
 
     public class UsersController : Controller{
 
-        public void ShowUsers(){
+        public ActionResult Create(){
 
-            System.Console.WriteLine("Hello");
-
-            using(Context _context = new Context()){
-
-                foreach(User user in _context.Users.ToList()){
-                    System.Console.WriteLine($"{user.Name} - {user.SirName} - {user.Username}");
-                }
-
-            }
+            return View("~/Views/User/Create.cshtml");
 
         }
 

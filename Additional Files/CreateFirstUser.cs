@@ -10,27 +10,26 @@ namespace HardCode{
 
         public static void CreateAdmin(){
 
-            using(Context context = new Context()){
-
-                context.Users.Remove(context.Users.ToList()[0]);
-                context.SaveChanges();
+            using(Context _context = new Context()){
 
                 User FirstAdmin = new User();
 
+                FirstAdmin.Id = Guid.NewGuid();
                 FirstAdmin.Username = "Krash";
                 FirstAdmin.Password = Password_Hasher.Hash("adminpass");
                 FirstAdmin.Name = "Hristo";
                 FirstAdmin.MiddleName = "Antonov";
-                FirstAdmin.SirName = "Kanev";
-                FirstAdmin.PersonalID = "0246228524";
-                FirstAdmin.PhoneNumber = "0878686974";
+                FirstAdmin.SurName = "Kanev";
+                FirstAdmin.PersonalID = "4568432687";
+                FirstAdmin.PhoneNumber = "0878987668";
                 FirstAdmin.Email = "HristoKanevKrash@gmail.com";
                 FirstAdmin.DateOfAppointment = DateTime.Now;
                 FirstAdmin.Active =  true;
                 FirstAdmin.Administrator = true;
 
-                context.Users.ToList().Insert(0, FirstAdmin);
-                context.SaveChanges();
+                _context.Users.Add(FirstAdmin);
+                _context.SaveChanges();
+
 
             }
 

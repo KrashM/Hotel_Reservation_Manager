@@ -6,7 +6,7 @@ namespace Hotel_Reservation_Manager.Models.Data{
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
-        public string SirName { get; set; }
+        public string SurName { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.Phone]
         public string PhoneNumber { get; set; }

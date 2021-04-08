@@ -1,6 +1,6 @@
 use HotelReservationManager;
-drop table __EFMigrationsHistory;
-drop table Clients;
-drop table Reservations;
 drop table Rooms;
 drop table Users;
+drop table ClientReservation;
+drop table Clients;
+drop table Reservations;

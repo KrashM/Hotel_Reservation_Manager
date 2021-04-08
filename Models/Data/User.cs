@@ -12,7 +12,7 @@ namespace Hotel_Reservation_Manager.Models.Data{
         [System.ComponentModel.DataAnnotations.Required]
         public string MiddleName { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
-        public string SirName { get; set; }
+        public string SurName { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(10)]
         public string PersonalID { get; set; }

@@ -15603,6 +15603,16 @@
   "RootNamespace": "Hotel_Reservation_Manager",
   "Documents": [
     {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\User\\Details.cshtml",
+      "TargetPath": "Views\\User\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\User\\Edit.cshtml",
+      "TargetPath": "Views\\User\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Home\\SignIn.cshtml",
       "TargetPath": "Views\\Home\\SignIn.cshtml",
       "FileKind": "mvc"
@@ -15630,6 +15640,11 @@
     {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\SignIn\\Home.cshtml",
       "TargetPath": "Views\\SignIn\\Home.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\User\\Create.cshtml",
+      "TargetPath": "Views\\User\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

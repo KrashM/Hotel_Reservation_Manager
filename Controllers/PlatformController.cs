@@ -1,42 +1,41 @@
 using Microsoft.AspNetCore.Mvc;
 using Hotel_Reservation_Manager.Models;
 using Hotel_Reservation_Manager.Models.Data;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Hotel_Reservation_Manager.Controllers
 {
     public class PlatformController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult Users(){
-            
-            System.Console.WriteLine("Hello");
 
             using(Context _context = new Context()){
 
-                foreach(User user in _context.Users.ToList()){
-                    System.Console.WriteLine($"{user.Name} - {user.SirName} - {user.Username}");
-                }
-
+                return View("~/Views/Platform/Users.cshtml", _context.Users.ToList());
             }
 
-            return View("~/Views/Platform/Users.cshtml");
 
         }
 
         public ActionResult Reservations(){
 
-            return View("~/Views/Platform/Reservations.cshtml");
+            using(Context _context = new Context()){
+
+                return View("~/Views/Platform/Reservations.cshtml", _context.Reservations.ToList());
+
+            }
 
         }
 
         public ActionResult Clients(){
 
-            return View("~/Views/Platform/Clients.cshtml");
+            using(Context _context = new Context()){
+
+                return View("~/Views/Platform/Clients.cshtml", _context.Clients.ToList());
+                
+            }
 
         }
     }

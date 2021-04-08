@@ -34,24 +34,6 @@ namespace Hotel_Reservation_Manager.Controllers
 
         }
 
-        public ActionResult Users(){
-
-            return View("~/Views/Platform/Users.cshtml");
-
-        }
-
-        public ActionResult Reservations(){
-
-            return View("~/Views/Platform/Reservations.cshtml");
-
-        }
-
-        public ActionResult Clients(){
-
-            return View("~/Views/Platform/Clients.cshtml");
-
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

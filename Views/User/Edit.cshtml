@@ -1,0 +1,111 @@
+@model Hotel_Reservation_Manager.Models.Data.User
+
+@{
+    System.DateTime date_of_appointment = Model.DateOfAppointment;
+    System.DateTime date_of_dismissal = Model.DateOfDismissal;
+    string date_of_appointment_formated = $"{date_of_appointment.Year}-{((date_of_appointment.Month < 10) ? "0" + date_of_appointment.Month : date_of_appointment.Month)}-{((date_of_appointment.Day < 10) ? "0" + date_of_appointment.Day : date_of_appointment.Day)}T{((date_of_appointment.TimeOfDay.Hours < 10) ? "0" + date_of_appointment.TimeOfDay.Hours : date_of_appointment.TimeOfDay.Hours)}:{((date_of_appointment.TimeOfDay.Minutes < 10) ? "0" + date_of_appointment.TimeOfDay.Minutes : date_of_appointment.TimeOfDay.Minutes)}";
+    string date_of_dismissal_formated = $"{((date_of_dismissal.Year < 1000) ? "000" + date_of_dismissal.Year : date_of_dismissal.Year)}-{((date_of_dismissal.Month < 10) ? "0" + date_of_dismissal.Month : date_of_dismissal.Month)}-{((date_of_dismissal.Day < 10) ? "0" + date_of_dismissal.Day : date_of_dismissal.Day)}T{((date_of_dismissal.TimeOfDay.Hours < 10) ? "0" + date_of_dismissal.TimeOfDay.Hours : date_of_dismissal.TimeOfDay.Hours)}:{((date_of_dismissal.TimeOfDay.Minutes < 10) ? "0" + date_of_dismissal.TimeOfDay.Minutes : date_of_dismissal.TimeOfDay.Minutes)}";
+    System.Guid user_id = Model.Id;
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Edit user</h1>
+    </div>
+    <div class="login">
+        <div id="info">
+            <form class="login">
+                <div class="form-group">
+                    <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Name" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="MiddleName" type="text" class="form-control" id="midname" placeholder="MiddleName" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="SurName" type="text" class="form-control" id="surname" placeholder="SurName" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="PersonalID" type="text" class="form-control" id="psid" placeholder="Personal ID" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="PhoneNumber" type="text" class="form-control" id="phone" placeholder="0888888888" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Email" type="text" class="form-control" id="email" placeholder="youremail@example.com" readonly>
+                </div>
+                <div class="form-group">
+                    <input asp-for="DateOfAppointment" type="datetime-local" class="form-control" id="dapp" value=@date_of_appointment_formated readonly>
+                </div>
+                <a>Active</a>
+                <div class="form-group">
+                    @{
+                        if(Model.Active){
+                            <input type="checkbox" id="active" disabled readonly checked>
+                        }
+                        else{
+                            <input type="checkbox" id="active" disabled readonly>
+                        }
+                    }
+                </div>
+                <div class="form-group">
+                    <input asp-for="DateOfAppointment" type="datetime-local" class="form-control" id="dapp" value=@date_of_dismissal_formated readonly>
+                </div>
+                <a>Administrator</a>
+                <div class="form-group">
+                    @{
+                        if(Model.Administrator){
+                            <input type="checkbox" id="active" disabled readonly checked>
+                        }
+                        else{
+                            <input type="checkbox" id="active" disabled readonly>
+                        }
+                    }
+                </div>
+            </form>
+        </div>
+        <div id="new">
+            <form class="login" asp-controller="Users" asp-action="EditUser">
+                <div class="form-group">
+                    <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input asp-for="MiddleName" type="text" class="form-control" id="midname" placeholder="MiddleName">
+                </div>
+                <div class="form-group">
+                    <input asp-for="SurName" type="text" class="form-control" id="surname" placeholder="SurName">
+                </div>
+                <div class="form-group">
+                    <input asp-for="PersonalID" type="text" class="form-control" id="psid" placeholder="Personal ID">
+                </div>
+                <div class="form-group">
+                    <input asp-for="PhoneNumber" type="text" class="form-control" id="phone" placeholder="0888888888">
+                </div>
+                <div class="form-group">
+                    <input asp-for="Email" type="text" class="form-control" id="email" placeholder="youremail@example.com">
+                </div>
+                <div class="form-group">
+                    <input asp-for="DateOfAppointment" type="datetime-local" class="form-control" id="dapp" value=@date_of_appointment_formated>
+                </div>
+                <a>Active</a>
+                <div class="form-group">
+                    <input asp-for="Active" type="checkbox" id="active">
+                </div>
+                <div class="form-group">
+                    <input asp-for="DateOfDismissal" type="datetime-local" class="form-control" id="dapp" value=@date_of_dismissal_formated>
+                </div>
+                <a>Administrator</a>
+                <div class="form-group">
+                    <input asp-for="Administrator" type="checkbox" id="active">
+                </div>
+                <input type="hidden" asp-for="Id" value=@user_id>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>

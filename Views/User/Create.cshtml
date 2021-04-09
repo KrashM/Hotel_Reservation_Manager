@@ -1,16 +1,13 @@
 @model Hotel_Reservation_Manager.Models.Data.User
 
+@{
+    DateTime now = System.DateTime.Now;
+    string time = $"{now.Year}-{((now.Month < 10) ? "0" + now.Month : now.Month)}-{((now.Day < 10) ? "0" + now.Day : now.Day)}T{((now.TimeOfDay.Hours < 10) ? "0" + now.TimeOfDay.Hours : now.TimeOfDay.Hours)}:{((now.TimeOfDay.Minutes < 10) ? "0" + now.TimeOfDay.Minutes : now.TimeOfDay.Minutes)}";
+}
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hotel Reservation Manager</a>
-            </div>
-        </nav>
-    </header>
     <div class="text-center">
-        <h1 class="display-4">Sign into your account</h1>
-        <form class="login" asp-area="" asp-controller="SignIn" asp-action="Verify">
+        <h1 class="display-4">Create user account</h1>
+        <form class="login" asp-controller="Users" asp-action="Create">
             <div class="form-group">
                 <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username">
                 <span asp-validation-for="Username" class="text-danger"></span>
@@ -28,25 +25,24 @@
                 <input asp-for="SurName" type="text" class="form-control" id="surname" placeholder="SurName">
             </div>
             <div class="form-group">
-                <input asp-for="PersonalID" type="text" class="form-control" id="   " placeholder="Password">
+                <input asp-for="PersonalID" type="text" class="form-control" id="psid" placeholder="Personal ID">
             </div>
             <div class="form-group">
-                <input asp-for="Password" type="password" class="form-control" id="pwd" placeholder="Password">
+                <input asp-for="PhoneNumber" type="text" class="form-control" id="phone" placeholder="0888888888">
             </div>
             <div class="form-group">
-                <input asp-for="Password" type="password" class="form-control" id="pwd" placeholder="Password">
+                <input asp-for="Email" type="text" class="form-control" id="email" placeholder="youremail@example.com">
             </div>
             <div class="form-group">
-                <input asp-for="Password" type="password" class="form-control" id="pwd" placeholder="Password">
+                <input asp-for="DateOfAppointment" type="datetime-local" class="form-control" id="dapp" value=@time>
             </div>
+            <a>Active</a>
             <div class="form-group">
-                <input asp-for="Password" type="password" class="form-control" id="pwd" placeholder="Password">
+                <input asp-for="Active" type="checkbox" id="active" value="true">
             </div>
+            <a>Administrator</a>
             <div class="form-group">
-                <input asp-for="Password" type="password" class="form-control" id="pwd" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <input asp-for="Password" type="password" class="form-control" id="pwd" placeholder="Password">
+                <input asp-for="Administrator" type="checkbox" id="admin" value="true">
             </div>
             <button type="submit">Submit</button>
         </form>

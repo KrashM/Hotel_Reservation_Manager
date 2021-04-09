@@ -18,6 +18,7 @@ namespace Hotel_Reservation_Manager.Models.Data{
         public string PersonalID { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.Phone]
+        //ADD Restrictions
         public string PhoneNumber { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.EmailAddress]

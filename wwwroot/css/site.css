@@ -70,7 +70,7 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-.login input[type="text"], .login input[type="password"]{
+.login input[type="text"], .login input[type="password"], .login input[type="datetime-local"]{
   border:0;
   background: none;
   display: block;
@@ -78,14 +78,14 @@ body {
   text-align: center;
   border:2px solid #3498db;
   padding: 14px 10px;
-  width: 200px;
+  width: 240px;
   outline: none;
   border-radius: 24px;
   transition: 0.25s;
 }
 
 .login input[type="text"]:focus, .login input[type="password"]:focus{
-  width: 280px;
+  width: 320px;
   border-color: #2ecc71;
 }
 
@@ -105,4 +105,23 @@ body {
 
 .login button[type="submit"]:hover{
   background: #2ecc71;
+}
+
+.login input[type="checkbox"], .login a{
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* make the boxes static */
+#info{
+  position: absolute;
+  left: 25%;
+  right: auto;
+}
+
+#new{
+  position: absolute;
+  right: 25%;
+  left: auto;
 }

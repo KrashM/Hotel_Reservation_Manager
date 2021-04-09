@@ -1,0 +1,33 @@
+@model Hotel_Reservation_Manager.Models.Data.Client
+
+@{
+    System.Guid client_id = Model.Id;
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Edit client</h1>
+    </div>
+    <div class="login">
+        <form class="login" asp-controller="Clients" asp-action="EditClient">
+            <div class="form-group">
+                <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input asp-for="SurName" type="text" class="form-control" id="surname" placeholder="SurName">
+            </div>
+            <div class="form-group">
+                <input asp-for="PhoneNumber" type="text" class="form-control" id="phone" placeholder="0888888888">
+            </div>
+            <div class="form-group">
+                <input asp-for="Email" type="text" class="form-control" id="email" placeholder="youremail@example.com">
+            </div>
+            <a>Adult</a>
+            <div class="form-group">
+                <input asp-for="Adult" type="checkbox" id="active">
+            </div>
+            <input type="hidden" asp-for="Id" value=@client_id>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>

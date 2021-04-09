@@ -1,0 +1,24 @@
+@model Hotel_Reservation_Manager.Models.Data.Room
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Room details</h1>
+    </div>
+    <form class="login">
+        <div class="form-group">
+            <input asp-for="Number" type="number" class="form-control" id="number" placeholder=@Model.Number readonly>
+        </div>
+        <div class="form-group">
+            <input asp-for="Capacity" type="number" class="form-control" id="cap" placeholder=@Model.Capacity readonly>
+        </div>
+        <div class="form-group">
+            <input asp-for="Type" type="text" class="form-control" id="type" placeholder=@Model.Type readonly>
+        </div>
+        <div class="form-group">
+            <input asp-for="PriceForBedAdult" type="number" class="form-control" id="price_ad" placeholder=@Model.PriceForBedAdult readonly>
+        </div>
+        <div class="form-group">
+            <input asp-for="PriceForBedAdult" type="number" class="form-control" id="price_ad" placeholder=@Model.PriceForBedChild readonly>
+        </div>
+    </form>
+</body>

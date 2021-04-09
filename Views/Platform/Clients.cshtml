@@ -1,33 +1,47 @@
+@model ICollection<Hotel_Reservation_Manager.Models.Data.Client>
+    
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <body>
     <div class="text-center">
-        <h1 class="display-4">Clients menu</h1>
+        <h1 class="display-4">Clients</h1>
     </div>
+    <input type="button" class="btn btn-outline-success" value="Create" onclick="location.href='@Url.Action("CreateMenu", "Clients")'" />
     <table class="table">
         <thead class="thead-dark">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <tr align="center">
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Options</th>
             </tr>
         </thead>
         @if (Model != null){
-            @foreach(var client in Model){
+            int rows = 1;
+            foreach(var client in Model){
+
+                string color = "";
             
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                            <td>@client.Name</td>
-                            <td>@client.SirName</td>
-                            <td>@client.Email</td>
+                if(@client.Adult){
+                    color = "table-success";
+                }
+                <tbody align="center">
+                    <tr class=@color>
+                        <th scope="row">@rows</th>
+                        <td>@client.Name</td>
+                        <td>@client.SurName</td>
+                        <td>@client.Email</td>
+                        <td>@Html.ActionLink("Edit", "EditMenu", new { controller = "Clients", action = "EditMenu", client_id=client.Id }) | @Html.ActionLink("Details", "ShowDetails", new { controller = "Clients", action = "ShowDetails", client_id=client.Id}) | @Html.ActionLink("Delete", "DeleteClient", new { controller = "Clients", action = "DeleteClient", client_id=client.Id})</td>
                     </tr>
                 </tbody>
+
+                rows++;
 
             }
         }
     </table>
+    
 </body>

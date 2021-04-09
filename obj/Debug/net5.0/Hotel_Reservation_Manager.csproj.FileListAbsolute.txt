@@ -80,3 +80,10 @@ D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\User\Edit.cshtm
 D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Reservation\Create.cshtml.g.cs
 D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Reservation\Details.cshtml.g.cs
 D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Reservation\Edit.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Client\Create.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Client\Details.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Client\Edit.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Room\Create.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Room\Details.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Room\Edit.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Platform\Rooms.cshtml.g.cs

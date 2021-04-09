@@ -15648,6 +15648,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Room\\Edit.cshtml",
+      "TargetPath": "Views\\Room\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -15660,6 +15665,16 @@
     {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\User\\Create.cshtml",
       "TargetPath": "Views\\User\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Client\\Create.cshtml",
+      "TargetPath": "Views\\Client\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Platform\\Rooms.cshtml",
+      "TargetPath": "Views\\Platform\\Rooms.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15678,6 +15693,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Client\\Edit.cshtml",
+      "TargetPath": "Views\\Client\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -15685,6 +15705,21 @@
     {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Platform\\Clients.cshtml",
       "TargetPath": "Views\\Platform\\Clients.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Client\\Details.cshtml",
+      "TargetPath": "Views\\Client\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Room\\Details.cshtml",
+      "TargetPath": "Views\\Room\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Room\\Create.cshtml",
+      "TargetPath": "Views\\Room\\Create.cshtml",
       "FileKind": "mvc"
     }
   ],

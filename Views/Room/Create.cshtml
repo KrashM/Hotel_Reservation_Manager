@@ -1,0 +1,30 @@
+@model Hotel_Reservation_Manager.Models.Data.Room
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Create room</h1>
+        <form class="login" asp-controller="Rooms" asp-action="Create">
+            <div class="form-group">
+                <input asp-for="Number" type="number" class="form-control" id="number" placeholder="000">
+            </div>
+            <div class="form-group">
+                <input asp-for="Capacity" type="number" class="form-control" id="cap" placeholder="0">
+            </div>
+            <div class="form-group">
+                <select asp-for="Type" class="form-control" id="Type">
+                    <option value="Single">Single bed</option>
+                    <option value="Two">Two bed</option>
+                    <option value="Mesaunet">Mesaunet</option>
+                    <option value="Appartment">Appartment</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input asp-for="PriceForBedAdult" type="number" class="form-control" id="price_ad" placeholder="20.00">
+            </div>
+            <div class="form-group">
+                <input asp-for="PriceForBedChild" type="number" class="form-control" id="price_ch" placeholder="15.00">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>

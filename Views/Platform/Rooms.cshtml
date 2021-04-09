@@ -1,0 +1,58 @@
+@model dynamic
+    
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Rooms</h1>
+    </div>
+    @{
+        if(@Model.LoggedUser.Administrator){
+            <input type="button" class="btn btn-outline-success" value="Create" onclick="location.href='@Url.Action("CreateMenu", "Rooms")'" />
+        }
+    }
+    <table class="table">
+        <thead class="thead-dark">
+            <tr align="center">
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        @if (Model != null){
+            int rows = 1;
+            foreach(var room in Model.Rooms){
+                if(@Model.LoggedUser.Administrator){
+                    <tbody align="center">
+                        <tr>
+                            <th scope="row">@rows</th>
+                            <td>@room.Number</td>
+                            <td>@room.Capacity</td>
+                            <td>@room.Type</td>
+                            <td>@Html.ActionLink("Edit", "EditMenu", new { controller = "Rooms", action = "EditMenu", room_id=room.Id }) | @Html.ActionLink("Details", "ShowDetails", new { controller = "Rooms", action = "ShowDetails", room_id=room.Id}) | @Html.ActionLink("Delete", "DeleteRoom", new { controller = "Rooms", action = "DeleteRoom", room_id=room.Id})</td>
+                        </tr>
+                    </tbody>
+                }
+                else{
+                    <tbody align="center">
+                        <tr>
+                            <th scope="row">@rows</th>
+                            <td>@room.Number</td>
+                            <td>@room.Capacity</td>
+                            <td>@room.Type</td>
+                            <td>@Html.ActionLink("Details", "ShowDetails", new { controller = "Rooms", action = "ShowDetails", room_id=room.Id})</td>
+                        </tr>
+                    </tbody>
+                }
+
+                rows++;
+
+            }
+        }
+    </table>
+    
+</body>

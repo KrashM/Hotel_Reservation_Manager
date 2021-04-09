@@ -1,0 +1,32 @@
+@model Hotel_Reservation_Manager.Models.Data.Client
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Client details</h1>
+    </div>
+    <form class="login">
+            <div class="form-group">
+                <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Name" readonly>
+            </div>
+            <div class="form-group">
+                <input asp-for="SurName" type="text" class="form-control" id="surname" placeholder="SurName" readonly>
+            </div>
+            <div class="form-group">
+                <input asp-for="PhoneNumber" type="text" class="form-control" id="phone" placeholder="0888888888" readonly>
+            </div>
+            <div class="form-group">
+                <input asp-for="Email" type="text" class="form-control" id="email" placeholder="youremail@example.com" readonly>
+            </div>
+            <a>Adult</a>
+            <div class="form-group">
+                @{
+                    if(Model.Adult){
+                        <input type="checkbox" id="active" disabled readonly checked>
+                    }
+                    else{
+                        <input type="checkbox" id="active" disabled readonly>
+                    }
+                }
+            </div>
+        </form>
+</body>

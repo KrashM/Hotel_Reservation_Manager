@@ -46,14 +46,16 @@ namespace Hotel_Reservation_Manager.Controllers{
                 _context.Users.Add(newUser);
                 _context.SaveChanges();
 
-                return View("~/Views/Platform/Users.cshtml", _context.Users.ToList());
+                dynamic mymodel = new System.Dynamic.ExpandoObject();
+                mymodel.LoggedUser = SharedData.logged;
+                mymodel.Users = _context.Users.ToList();
+                return View("~/Views/Platform/Users.cshtml", mymodel);
 
             }
 
 
         }
 
-        [HttpGet]
         public ActionResult ShowDetails(System.Guid user_id){
 
             using(Context _context = new Context()){
@@ -101,7 +103,11 @@ namespace Hotel_Reservation_Manager.Controllers{
                 _context.Users.Remove(_context.Users.Find(user_id));
                 _context.SaveChanges();
 
-                return View("~/Views/Platform/Users.cshtml", _context.Users.ToList());
+
+                dynamic mymodel = new System.Dynamic.ExpandoObject();
+                mymodel.LoggedUser = SharedData.logged;
+                mymodel.Users = _context.Users.ToList();
+                return View("~/Views/Platform/Users.cshtml", mymodel);
 
             }
 

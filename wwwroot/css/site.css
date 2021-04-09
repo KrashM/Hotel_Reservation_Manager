@@ -112,16 +112,3 @@ body {
   margin: 20px auto;
   text-align: center;
 }
-
-/* make the boxes static */
-#info{
-  position: absolute;
-  left: 25%;
-  right: auto;
-}
-
-#new{
-  position: absolute;
-  right: 25%;
-  left: auto;
-}

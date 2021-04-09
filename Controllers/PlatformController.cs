@@ -13,7 +13,11 @@ namespace Hotel_Reservation_Manager.Controllers
 
             using(Context _context = new Context()){
 
-                return View("~/Views/Platform/Users.cshtml", _context.Users.ToList());
+                dynamic mymodel = new System.Dynamic.ExpandoObject();  
+                mymodel.LoggedUser = SharedData.logged;  
+                mymodel.Users = _context.Users.ToList();  
+                return View("~/Views/Platform/Users.cshtml", mymodel);
+                
             }
 
 
@@ -22,6 +26,8 @@ namespace Hotel_Reservation_Manager.Controllers
         public ActionResult Reservations(){
 
             using(Context _context = new Context()){
+
+                //ViewData["User"]
 
                 return View("~/Views/Platform/Reservations.cshtml", _context.Reservations.ToList());
 

@@ -66,8 +66,6 @@ namespace Hotel_Reservation_Manager.Controllers{
 
         public ActionResult EditUser(System.Guid Id, string username, string name, string MiddleName, string surname, string PersonalID, string PhoneNumber, string email, System.DateTime DateOfAppointment, bool active, System.DateTime DateOfDismissal, bool Administrator){
 
-            System.Console.WriteLine(new{username, name, MiddleName, surname, PersonalID, PhoneNumber, email, DateOfAppointment, active, DateOfDismissal, Administrator, Id});
-
             using(Context _context = new Context()){
 
                 User user = _context.Users.Find(Id);
@@ -85,8 +83,11 @@ namespace Hotel_Reservation_Manager.Controllers{
                 user.Administrator = Administrator;
 
                 _context.SaveChanges();
-            
-                return View("~/Views/Platform/Users.cshtml", _context.Users.ToList());
+
+                dynamic mymodel = new System.Dynamic.ExpandoObject();  
+                mymodel.LoggedUser = SharedData.logged;  
+                mymodel.Users = _context.Users.ToList();  
+                return View("~/Views/Platform/Users.cshtml", mymodel);
 
             }
 

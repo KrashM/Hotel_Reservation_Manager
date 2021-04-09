@@ -15623,8 +15623,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Reservation\\Details.cshtml",
+      "TargetPath": "Views\\Reservation\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Reservation\\Create.cshtml",
+      "TargetPath": "Views\\Reservation\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Coding\\Hotel_Reservation_Manager\\Views\\Reservation\\Edit.cshtml",
+      "TargetPath": "Views\\Reservation\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

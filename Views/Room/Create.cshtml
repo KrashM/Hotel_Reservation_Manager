@@ -19,10 +19,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <input asp-for="PriceForBedAdult" type="number" class="form-control" id="price_ad" placeholder="20.00">
+                <input asp-for="PriceForBedAdult" type="number" step="0.01" class="form-control" id="price_ad" placeholder="0.00">
             </div>
             <div class="form-group">
-                <input asp-for="PriceForBedChild" type="number" class="form-control" id="price_ch" placeholder="15.00">
+                <input asp-for="PriceForBedChild" type="number" step="0.01" class="form-control" id="price_ch" placeholder="0.00">
             </div>
             <button type="submit">Submit</button>
         </form>

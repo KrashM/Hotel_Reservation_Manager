@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Hotel_Reservation_Manager.Models;
 using Hotel_Reservation_Manager.Models.Data;
+using System.Linq;
 
 namespace Hotel_Reservation_Manager.Controllers{
 
@@ -22,8 +23,18 @@ namespace Hotel_Reservation_Manager.Controllers{
             }
 
         }
+        
+        public ActionResult ShowDetails(System.Guid reservation_id){
 
-        public ActionResult Create(System.Guid roomID, System.Guid idOfAppointer, ICollection<Client> clients, System.DateTime dateofaccomodation, System.DateTime releaseDate, bool Breakfast, bool AllInclusive, double Price){
+            using(Context _context = new Context()){
+
+                return View("~/Views/Reservation/Details.cshtml", _context.Reservations.Find(reservation_id));
+
+            }
+
+        }
+
+        public ActionResult Create(System.Guid roomID, System.Guid idOfAppointer, System.DateTime dateofaccomodation, System.DateTime releaseDate, bool Breakfast, bool AllInclusive, double Price){
 
             using(Context _context = new Context()){
 
@@ -32,7 +43,16 @@ namespace Hotel_Reservation_Manager.Controllers{
                 reservation.Id = System.Guid.NewGuid();
                 reservation.RoomID = roomID;
                 reservation.IDOfAppointer = idOfAppointer;
-                reservation.Clients = clients;
+                foreach(Client client in SharedData.ClientList){
+
+                    ReservationClients newConnection = new ReservationClients();
+                    newConnection.Id = System.Guid.NewGuid();
+                    newConnection.ReservationID = reservation.Id;
+                    newConnection.ClientID = client.Id;
+
+                    _context.ReservationClients.Add(newConnection);
+
+                }
                 reservation.DateOfAccommodation = dateofaccomodation;
                 reservation.ReleaseDate = releaseDate;
                 reservation.Breakfast = Breakfast;
@@ -42,7 +62,7 @@ namespace Hotel_Reservation_Manager.Controllers{
                 _context.Reservations.Add(reservation);
                 _context.SaveChanges();
 
-                return View("~/Views/Platform/Reservations.cshtml", _context.Reservations);
+                return View("~/Views/Platform/Reservations.cshtml", _context.Reservations.ToList());
 
             }
 

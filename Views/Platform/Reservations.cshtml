@@ -1,37 +1,37 @@
-@model dynamic
-@using Hotel_Reservation_Manager.Models
-
-@{
-    ViewData["Title"] = "Home Page";
-}
+@model ICollection<Hotel_Reservation_Manager.Models.Data.Reservation>
 
 <body>
     <div class="text-center">
-        <h1 class="display-4">Reservation menu</h1>
+        <h1 class="display-4">Reservations</h1>
     </div>
-    <input type="button" class="btn btn-outline-success" value="Create" onclick="location.href='@Url.Action("CreateMenu", "Reservation")'" />
+    <input type="button" class="btn btn-outline-success" value="Create" onclick="location.href='@Url.Action("CreateMenu", "Reservations")'" />
     <table class="table">
         <thead class="thead-dark">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <tr align="center">
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Options</th>
             </tr>
         </thead>
         @if (Model != null){
-            @foreach(var reservation in Model){
-            
-                <tbody>
+            int rows = 1;
+            foreach(var reservation in Model){
+                <tbody align="center">
                     <tr>
-                        <th scope="row">1</th>
-                            <td>@Hotel_Reservation_Manager.Controllers.SharedData.GetRoomID(@reservation.RoomID)</td>
-                            <td>@reservation.AllInclusive</td>
-                            <td>@reservation.DateOfAccommodation</td>
+                        <th scope="row">@rows</th>
+                        <td>@Hotel_Reservation_Manager.Controllers.SharedData.GetRoomNumber(reservation.RoomID)</td>
+                        <td>@Hotel_Reservation_Manager.Controllers.SharedData.GetUsernameAppointer(reservation.IDOfAppointer)</td>
+                        <td>@reservation.DateOfAccommodation</td>
+                        <td>@Html.ActionLink("Edit", "EditMenu", new { controller = "Reservations", action = "EditMenu", reservation_id=reservation.Id }) | @Html.ActionLink("Details", "ShowDetails", new { controller = "Reservations", action = "ShowDetails", reservation_id=reservation.Id})</td>
                     </tr>
                 </tbody>
+
+                rows++;
 
             }
         }
     </table>
+    
 </body>

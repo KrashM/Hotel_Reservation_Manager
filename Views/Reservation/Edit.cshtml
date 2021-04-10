@@ -1,0 +1,42 @@
+@model Hotel_Reservation_Manager.Models.Data.Reservation
+@using Hotel_Reservation_Manager.Models.Data
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Edit Reservation</h1>
+    </div>
+    <div class="login">
+        <form class="login" asp-controller="Reservations" asp-action="EditReservation">
+            <div>
+                <input hidden asp-for="IDOfAppointer" id="userid" value=@Hotel_Reservation_Manager.Controllers.SharedData.logged.Id>
+            </div>
+            <div>
+                <select asp-for="RoomID" class="form-control" id="room">
+                    @{
+                        foreach(Room room in Hotel_Reservation_Manager.Controllers.SharedData.GetFreeRooms()){
+                            <option value=@room.Id>@room.Number</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div>
+                @Html.ActionLink("Clients", "CreateClientsList", new { controller = "Clients", action = "CreateClientsList"})
+            </div>
+            <div>
+                <input asp-for="DateOfAccommodation" type="datetime-local" id="dateacc">
+            </div>
+            <div>
+                <input asp-for="ReleaseDate" type="datetime-local" id="datedis">
+            </div>
+            <div>
+                <input asp-for="Breakfast" type="checkbox" id="breakfast">
+            </div>
+            <div>
+                <input asp-for="AllInclusive" type="checkbox" id="allinclusive">
+            </div>
+            <div>
+                <input asp-for="Price" type="number" step="0.01" id="price">
+            </div>
+        </form>
+    </div>
+</body>

@@ -6,19 +6,19 @@
     </div>
     <form class="login">
         <div class="form-group">
-            <input asp-for="Number" type="number" class="form-control" id="number" placeholder=@Model.Number readonly>
+            <input asp-for="Number" type="number" class="form-control" id="number" readonly>
         </div>
         <div class="form-group">
-            <input asp-for="Capacity" type="number" class="form-control" id="cap" placeholder=@Model.Capacity readonly>
+            <input asp-for="Capacity" type="number" class="form-control" id="cap" readonly>
         </div>
         <div class="form-group">
-            <input asp-for="Type" type="text" class="form-control" id="type" placeholder=@Model.Type readonly>
+            <input asp-for="Type" type="text" class="form-control" id="type" readonly>
         </div>
         <div class="form-group">
-            <input asp-for="PriceForBedAdult" type="number" class="form-control" id="price_ad" placeholder=@Model.PriceForBedAdult readonly>
+            <input asp-for="PriceForBedAdult" type="number" step="0.01" class="form-control" id="price_ad" readonly>
         </div>
         <div class="form-group">
-            <input asp-for="PriceForBedAdult" type="number" class="form-control" id="price_ad" placeholder=@Model.PriceForBedChild readonly>
+            <input asp-for="PriceForBedAdult" type="number" step="0.01" class="form-control" id="price_ad" readonly>
         </div>
     </form>
 </body>

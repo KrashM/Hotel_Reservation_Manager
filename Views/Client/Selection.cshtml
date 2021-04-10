@@ -1,0 +1,46 @@
+@model ICollection<Hotel_Reservation_Manager.Models.Data.Client>
+    
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Clients list</h1>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr align="center">
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        @if (Model != null){
+            int rows = 1;
+            foreach(var client in Model){
+
+                string color = "";
+            
+                if(@client.Adult){
+                    color = "table-success";
+                }
+                <tbody align="center">
+                    <tr class=@color>
+                        <td>@Html.ActionLink("Add", "AddClient", new { controller = "Clients", action = "AddClient", client_id=client.Id})</td>
+                        <td>@client.Name</td>
+                        <td>@client.SurName</td>
+                        <td>@client.Email</td>
+                        <td>@client.Adult</td>
+                    </tr>
+                </tbody>
+
+                rows++;
+
+            }
+        }
+    </table>
+    <input type="button" class="btn btn-outline-success" onclick="location.href='@Url.Action("CreateMenu", "Reservations")'" />
+</body>

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Hotel_Reservation_Manager.Models;
 using Hotel_Reservation_Manager.Models.Data;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
 
 namespace Hotel_Reservation_Manager.Controllers{
@@ -19,6 +21,32 @@ namespace Hotel_Reservation_Manager.Controllers{
 
                 return View("~/Views/Client/Edit.cshtml", _context.Clients.Find(client_id));
 
+            }
+
+        }
+
+        public ActionResult CreateClientsList(){
+
+            SharedData.ClientList = new List<Client>();
+
+            using(Context _context = new Context()){
+
+                return View("~/Views/Client/Selection.cshtml", _context.Clients.ToList());
+            
+            }
+
+        }
+
+        public ActionResult AddClient(System.Guid client_id){
+
+            using(Context _context = new Context()){
+
+                Client theClient = _context.Clients.Find(client_id);
+
+                if(!SharedData.ClientList.Contains(theClient)) SharedData.ClientList.Add(theClient);
+
+                return View("~/Views/Client/Selection.cshtml", _context.Clients.ToList());
+            
             }
 
         }

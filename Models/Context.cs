@@ -11,6 +11,7 @@ namespace Hotel_Reservation_Manager.Models{
         public DbSet<Client> Clients { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<ReservationClients> ReservationClients { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             optionsBuilder.UseSqlServer(@"Server=localhost; Database=HotelReservationManager; Integrated Security=true;");

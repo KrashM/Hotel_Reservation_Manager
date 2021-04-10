@@ -87,3 +87,4 @@ D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Room\Create.csh
 D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Room\Details.cshtml.g.cs
 D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Room\Edit.cshtml.g.cs
 D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Platform\Rooms.cshtml.g.cs
+D:\Coding\Hotel_Reservation_Manager\obj\Debug\net5.0\Razor\Views\Client\Selection.cshtml.g.cs

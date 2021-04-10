@@ -1,0 +1,8 @@
+Rooms/Create.cshtml - change numbers to have decimal points / add design /
+Creating user then returning to the same page duplicates user
+sign in messages
+email field design
+Users - show admin field
+validations - phone, pers id
+edit passwords
+Reservation/Create - change price to be double

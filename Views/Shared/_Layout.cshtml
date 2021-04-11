@@ -14,9 +14,11 @@
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hotel Reservation Manager</a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Platform" asp-action="Users">Users</a>
-                        </li>
+                        @if(Hotel_Reservation_Manager.Controllers.SharedData.logged.Administrator){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Platform" asp-action="Users">Users</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Platform" asp-action="Reservations">Reservations</a>
                         </li>
